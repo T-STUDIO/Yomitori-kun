@@ -45,7 +45,7 @@
             context.drawImage(video, 0, 0);
             const base64Image = canvas.toDataURL('image/jpeg').split(',')[1];
 
-            const apiKey = 'YOUR_GOOGLE_CLOUD_API_KEY'; // ここにキーを入れてください
+            const apiKey = 'AIzaSyDiuqCD3XPpI-yPogWDafmrQz-qKaVNZTo'; // ここにキーを入れてください
             const response = await fetch(`https://vision.googleapis.com/v1/images:annotate?key=${apiKey}`, {
                 method: 'POST',
                 body: JSON.stringify({
@@ -68,7 +68,7 @@
         }
 
         async function sendToSheet() {
-            const gasUrl = 'YOUR_GAS_WEB_APP_URL'; // ここにGASのURLを入れてください
+            const gasUrl = 'https://script.google.com/macros/s/AKfycbyRGehpTbjAAjbnzGe9jhcQzY9YiOZLk_NFgNuQY4bZAZUxQakJfj-EAvMQ2a-8q-J_dQ/exec'; // ここにGASのURLを入れてください
             await fetch(gasUrl, {
                 method: 'POST',
                 mode: 'no-cors',
